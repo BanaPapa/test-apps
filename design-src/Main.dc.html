@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>동네 흐름</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C2410C}a:hover{color:#8A2E08}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans KR', sans-serif; background: #F6F6F3; color: #16181D; min-height: 1000px;">
+  <header style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 20px; padding: 18px 56px; border-bottom: 1px solid #DADCE0;">
+    <span style="font-family: 'Hahmlet', serif; font-size: 20px; font-weight: 700; margin-right: 12px; align-self: center;">동네 흐름</span>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <label for="a1" style="font-size: 13px; color: #5C616C;">지역</label>
+      <div style="display: flex; gap: 6px;">
+        <select id="a1" style="height: 36px; border: 1px solid #C9CCD2; border-radius: 6px; padding: 0 10px; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D;"><option>서울특별시</option></select>
+        <select aria-label="시군구" style="height: 36px; border: 1px solid #C9CCD2; border-radius: 6px; padding: 0 10px; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D;"><option>강남구</option></select>
+        <select aria-label="법정동" style="height: 36px; border: 1px solid #C9CCD2; border-radius: 6px; padding: 0 10px; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D;"><option>신사동</option></select>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <span style="font-size: 13px; color: #5C616C;">기간</span>
+      <div role="group" aria-label="기간" style="display: flex; border: 1px solid #C9CCD2; border-radius: 6px; overflow: hidden; height: 36px;">
+        <button type="button" style="border: 0; padding: 0 14px; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D;">6개월</button>
+        <button type="button" aria-pressed="true" style="border: 0; border-left: 1px solid #C9CCD2; border-right: 1px solid #C9CCD2; padding: 0 14px; background: #16181D; font: inherit; font-size: 15px; color: #F6F6F3; font-weight: 600;">1년</button>
+        <button type="button" style="border: 0; padding: 0 14px; background: #FFFFFF; font: inherit; font-size: 15px; color: #16181D;">3년</button>
+      </div>
+    </div>
+    <div style="margin-left: auto; display: flex; flex-direction: column; gap: 4px;">
+      <label for="a2" style="font-size: 13px; color: #5C616C;">공공데이터포털 인증키</label>
+      <div style="display: flex; gap: 6px; align-items: center;">
+        <input id="a2" type="password" placeholder="인증키 붙여 넣기" style="width: 200px; height: 36px; box-sizing: border-box; padding: 0 10px; border: 1px solid #C9CCD2; border-radius: 6px; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #16181D;">
+        <span style="font-size: 13px; color: #2F6B3F;">저장됨</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width: 1180px; margin: 0 auto; padding: 40px 56px 56px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 32px; row-gap: 36px;">
+    <section style="grid-column: span 12; display: flex; flex-direction: column; gap: 10px;">
+      <h1 style="margin: 0; font-family: 'Hahmlet', serif; font-size: 40px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; max-width: 880px;">신사동 아파트, 1년 새 3.3㎡당 <span style="color: #C2410C;">8.6%</span> 올랐습니다</h1>
+      <p style="margin: 0; font-size: 15px; color: #4A4F5A;">2025년 10월부터 2026년 9월까지 신고된 73건. 해제 거래는 뺐고, 가격은 전용면적 기준 중위값입니다.</p>
+    </section>
+
+    <figure style="grid-column: span 12; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+      <figcaption style="font-size: 15px; font-weight: 600;">3.3㎡당 중위 가격 <span style="font-weight: 400; color: #5C616C;">(만원)</span></figcaption>
+      <svg viewBox="0 0 1000 300" style="width: 100%; height: 320px;" role="img" aria-label="중위 평당가가 2025년 10월 9,190만원에서 2026년 9월 9,980만원으로 상승. 6월에 거래 4건으로 일시 하락.">
+        <line x1="60" y1="236.8" x2="1000" y2="236.8" stroke="#E3E5E8"></line>
+        <line x1="60" y1="167.4" x2="1000" y2="167.4" stroke="#E3E5E8"></line>
+        <line x1="60" y1="97.9" x2="1000" y2="97.9" stroke="#E3E5E8"></line>
+        <text x="0" y="241" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">9,200</text>
+        <text x="0" y="172" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">9,500</text>
+        <text x="0" y="102" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">9,800</text>
+        <polygon points="60,239.2 140,229.9 220,222.9 300,234.5 380,213.7 460,202.1 540,185.9 620,165.1 700,195.2 780,107.2 860,86.3 940,56.2 940,262 60,262" fill="#C2410C" fill-opacity="0.07"></polygon>
+        <polyline points="60,239.2 140,229.9 220,222.9 300,234.5 380,213.7 460,202.1 540,185.9 620,165.1 700,195.2 780,107.2 860,86.3 940,56.2" fill="none" stroke="#C2410C" stroke-width="2.5" stroke-linejoin="round"></polyline>
+        <line x1="60" y1="262" x2="1000" y2="262" stroke="#16181D"></line>
+        <circle cx="60" cy="239.2" r="5" fill="#F6F6F3" stroke="#C2410C" stroke-width="2"></circle>
+        <text x="72" y="258" font-family="IBM Plex Mono" font-size="13" fill="#4A4F5A">9,190</text>
+        <circle cx="700" cy="195.2" r="5" fill="#F6F6F3" stroke="#C2410C" stroke-width="2"></circle>
+        <line x1="700" y1="203" x2="700" y2="226" stroke="#16181D" stroke-width="1"></line>
+        <text x="700" y="244" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="13" fill="#16181D">6월, 거래 4건으로 잠시 주춤</text>
+        <circle cx="940" cy="56.2" r="6" fill="#C2410C"></circle>
+        <text x="926" y="40" text-anchor="end" font-family="IBM Plex Sans KR" font-size="15" font-weight="600" fill="#16181D">9월 9,980만, 1년 최고</text>
+        <text x="60" y="286" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">2025.10</text>
+        <text x="300" y="286" text-anchor="middle" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">2026.01</text>
+        <text x="540" y="286" text-anchor="middle" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">04</text>
+        <text x="780" y="286" text-anchor="middle" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">07</text>
+        <text x="940" y="286" text-anchor="end" font-family="IBM Plex Mono" font-size="13" fill="#5C616C">09</text>
+      </svg>
+    </figure>
+
+    <figure style="grid-column: span 7; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+      <figcaption style="font-size: 15px; font-weight: 600;">월별 거래량 <span style="font-weight: 400; color: #5C616C;">(건)</span></figcaption>
+      <div style="display: flex; align-items: flex-end; gap: 6px; height: 140px; border-bottom: 1px solid #16181D;">
+        <sc-for list="{{bars}}" as="b" hint-placeholder-count="12">
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: {{b.lc}};">{{b.n}}</span>
+            <div style="width: 70%; height: {{b.h}}; background: {{b.c}}; border-radius: 3px 3px 0 0;"></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <sc-for list="{{bars}}" as="b" hint-placeholder-count="12"><span style="flex: 1; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5C616C;">{{b.m}}</span></sc-for>
+      </div>
+      <p style="margin: 0; font-size: 15px; color: #4A4F5A;">7월부터 석 달 연속 8건 이상. 1년 평균 6.1건을 웃돕니다.</p>
+    </figure>
+
+    <section style="grid-column: span 5; display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600;">면적대별로 보면</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px;">
+        <sc-for list="{{sm}}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 10px; border-top: 1px solid #16181D;">
+            <span style="font-size: 13px; color: #4A4F5A;">{{s.label}}</span>
+            <svg viewBox="0 0 160 44" style="width: 100%; height: 44px;" aria-hidden="true">
+              <polyline points="{{s.pts}}" fill="none" stroke="{{s.c}}" stroke-width="2" stroke-dasharray="{{s.dash}}" stroke-linejoin="round"></polyline>
+            </svg>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 500;">{{s.v}}</span>
+              <span style="font-size: 13px; color: {{s.dc}}; font-weight: 600;">{{s.d}}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <div style="grid-column: span 12; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding-top: 20px; border-top: 1px solid #DADCE0;">
+      <a href="#" style="font-size: 15px; font-weight: 500;">거래 73건 표로 보기</a>
+      <button type="button" style="height: 36px; padding: 0 16px; border: 1px solid #16181D; border-radius: 6px; background: transparent; color: #16181D; font: inherit; font-size: 15px;">엑셀로 받기</button>
+      <span style="margin-left: auto; font-size: 13px; color: #5C616C;">예시 데이터 · 출처 국토교통부 실거래가</span>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var m = ['10','11','12','1','2','3','4','5','6','7','8','9'];
+    var c = [6,5,3,4,6,7,5,7,4,9,8,9];
+    return {
+      bars: m.map(function (x, i) {
+        var hot = i >= 9;
+        return { m: x, n: c[i], h: Math.round(c[i] / 9 * 104) + 'px', c: hot ? '#16181D' : '#B9BDC5', lc: hot ? '#16181D' : '#5C616C' };
+      }),
+      sm: [
+        { label: '60㎡ 이하', pts: '4,34 30,32 56,33 82,28 108,26 134,24 156,20', v: '8,720만', d: '+4.1%', dc: '#C2410C', c: '#16181D', dash: 'none' },
+        { label: '60~85㎡', pts: '4,38 30,35 56,34 82,26 108,20 134,14 156,6', v: '9,140만', d: '+11.2%', dc: '#C2410C', c: '#16181D', dash: 'none' },
+        { label: '85~135㎡', pts: '4,32 30,30 56,31 82,24 108,22 134,18 156,14', v: '1억 380만', d: '+7.4%', dc: '#C2410C', c: '#16181D', dash: 'none' },
+        { label: '135㎡ 초과', pts: '4,22 80,18 156,24', v: '2건뿐', d: '표본 부족', dc: '#5C616C', c: '#9AA0AA', dash: '4 4' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

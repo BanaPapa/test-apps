@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카드 스튜디오 · 목표 화면 (예시 데이터)</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#444444}
+</style>
+</head>
+<body>
+<!-- 목표 화면 시안. 숫자와 단지명은 지어낸 예시이며 모양·간격·색만 따른다. -->
+<div style="font-family: 'Noto Sans KR', sans-serif; background: #FCFCFB; color: #111111; min-height: 1060px;">
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 18px 40px; border-bottom: 1px solid #E6E6E3;">
+    <span style="font-family: 'Black Han Sans', sans-serif; font-size: 25px; margin-right: 16px;">카드 스튜디오</span>
+    <label for="d1" style="position: absolute; left: -9999px;">지역과 달</label>
+    <select id="d1" style="height: 40px; border: 1px solid #D6D6D2; border-radius: 999px; padding: 0 16px; background: #FFFFFF; font: inherit; font-size: 15px; color: #111111;"><option>강남구 신사동 · 2026년 9월</option></select>
+    <div style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 6px 0 16px; border: 1px solid #D6D6D2; border-radius: 999px; background: #FFFFFF;">
+      <label for="d2" style="font-size: 13px; color: #55554F;">공공데이터포털 인증키</label>
+      <input id="d2" type="password" placeholder="붙여 넣기" style="width: 120px; height: 30px; box-sizing: border-box; border: 0; border-radius: 999px; padding: 0 10px; background: #F3F3F0; font: inherit; font-size: 13px; color: #111111;">
+    </div>
+    <span style="margin-left: auto; font-size: 13px; color: #55554F;">예시 데이터</span>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; padding: 32px 40px 48px;">
+    <main style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 6px;">
+        <div style="flex: 0 0 272px; aspect-ratio: 4 / 5; border-radius: 20px; background: #C8F03C; padding: 26px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 13px; font-weight: 700;">신사동 9월 실거래</span>
+          <h2 style="margin: 0; font-family: 'Black Han Sans', sans-serif; font-size: 44px; font-weight: 400; line-height: 1.12;">거래도<br>가격도<br>올라옵니다</h2>
+          <span style="font-size: 13px; font-weight: 700;">@[내 계정]</span>
+        </div>
+        <div style="flex: 0 0 272px; aspect-ratio: 4 / 5; border-radius: 20px; background: #111111; color: #FCFCFB; padding: 26px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 13px; font-weight: 700; color: #C8F03C;">3.3㎡당 중위가</span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: 'Black Han Sans', sans-serif; font-size: 56px; line-height: 1;">9,980<span style="font-size: 25px;">만</span></span>
+            <span style="font-size: 17px; font-weight: 700; color: #C8F03C;">1년 중 가장 높음</span>
+          </div>
+          <svg viewBox="0 0 220 60" style="width: 100%; height: 60px;" aria-hidden="true"><polyline points="4,52 24,50 44,48 64,51 84,46 104,44 124,40 144,35 164,42 184,22 204,17 216,8" fill="none" stroke="#C8F03C" stroke-width="3" stroke-linejoin="round"></polyline></svg>
+        </div>
+        <div style="flex: 0 0 272px; aspect-ratio: 4 / 5; border-radius: 20px; background: #FFFFFF; border: 2px solid #111111; padding: 26px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 13px; font-weight: 700;">이달 가장 비싼 거래</span>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
+            <li style="display: flex; flex-direction: column;"><span style="font-family: 'Black Han Sans', sans-serif; font-size: 32px; line-height: 1.1;">31억 2,000</span><span style="font-size: 13px; color: #55554F;">도산파크 114㎡</span></li>
+            <li style="display: flex; flex-direction: column;"><span style="font-family: 'Black Han Sans', sans-serif; font-size: 25px; line-height: 1.1;">23억 5,000</span><span style="font-size: 13px; color: #55554F;">가로수힐 84㎡</span></li>
+          </ol>
+          <span style="font-size: 13px; color: #55554F;">출처 국토교통부 실거래가</span>
+        </div>
+      </div>
+
+      <section style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <h2 style="margin: 0; font-size: 20px; font-weight: 900;">모델이 쓴 본문, 하나를 고르세요</h2>
+          <button type="button" style="height: 40px; padding: 0 18px; border: 1px solid #111111; border-radius: 999px; background: transparent; font: inherit; font-size: 15px; color: #111111;">다시 쓰기</button>
+        </div>
+        
+          <label style="display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 18px 20px; border-radius: 16px; border: 2px solid #111111; background: #F4FBDD;">
+            <input type="radio" name="draft" checked style="width: 20px; height: 20px; margin-top: 3px; accent-color: #111111;">
+            <span style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 13px; font-weight: 700; color: #55554F;">숫자 위주</span>
+              <span style="font-size: 15px; line-height: 1.7; white-space: pre-line;">신사동 아파트 9월 실거래 9건.
+3.3㎡당 중위가 9,980만으로 1년 중 가장 높습니다.</span>
+            </span>
+            <span style="font-size: 13px; color: #55554F;">50자</span>
+          </label>
+        
+          <label style="display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 18px 20px; border-radius: 16px; border: 2px solid #E6E6E3; background: #FFFFFF;">
+            <input type="radio" name="draft" style="width: 20px; height: 20px; margin-top: 3px; accent-color: #111111;">
+            <span style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 13px; font-weight: 700; color: #55554F;">동네 이야기체</span>
+              <span style="font-size: 15px; line-height: 1.7; white-space: pre-line;">요즘 신사동 문의가 부쩍 늘었는데, 숫자도 그렇습니다.
+9월에만 9건, 84㎡가 거래의 절반이었어요.</span>
+            </span>
+            <span style="font-size: 13px; color: #55554F;">55자</span>
+          </label>
+        
+          <label style="display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 18px 20px; border-radius: 16px; border: 2px solid #E6E6E3; background: #FFFFFF;">
+            <input type="radio" name="draft" style="width: 20px; height: 20px; margin-top: 3px; accent-color: #111111;">
+            <span style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 13px; font-weight: 700; color: #55554F;">질문형</span>
+              <span style="font-size: 15px; line-height: 1.7; white-space: pre-line;">신사동 84㎡, 지금 얼마일까요?
+9월 가로수힐 84㎡는 23억 5,000에 거래됐습니다.</span>
+            </span>
+            <span style="font-size: 13px; color: #55554F;">49자</span>
+          </label>
+        
+      </section>
+    </main>
+
+    <aside style="flex: 1 1 300px; max-width: 340px; display: flex; flex-direction: column; gap: 20px;">
+      <section style="border-radius: 20px; background: #111111; color: #FCFCFB; padding: 22px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><h2 style="margin: 0; font-size: 17px; font-weight: 700;">글쓰기 모델</h2><span style="font-size: 13px; font-weight: 700; color: #111111; background: #C8F03C; border-radius: 999px; padding: 4px 10px;">연결됨</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label for="e1" style="font-size: 13px; color: #BDBDB6;">제공사</label><select id="e1" style="height: 40px; border: 1px solid #3A3A36; border-radius: 10px; padding: 0 12px; background: #1C1C1A; color: #FCFCFB; font: inherit; font-size: 15px;"><option>OpenRouter</option><option>Anthropic</option><option>OpenAI</option><option>Google Gemini</option></select></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label for="e2" style="font-size: 13px; color: #BDBDB6;">API 키</label><input id="e2" type="password" placeholder="sk-or-..." style="height: 40px; box-sizing: border-box; border: 1px solid #3A3A36; border-radius: 10px; padding: 0 12px; background: #1C1C1A; color: #FCFCFB; font: inherit; font-size: 15px;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label for="e3" style="font-size: 13px; color: #BDBDB6;">모델</label><select id="e3" style="height: 40px; border: 1px solid #3A3A36; border-radius: 10px; padding: 0 12px; background: #1C1C1A; color: #FCFCFB; font: inherit; font-size: 15px;"><option>목록에서 선택 (무료 모델 포함)</option></select></div>
+      </section>
+      <section style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 900;">모델이 쓰지 않을 말</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; background: #F0F0EC; font-size: 13px; text-decoration: line-through;">폭등</span><span style="height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; background: #F0F0EC; font-size: 13px; text-decoration: line-through;">역대급</span><span style="height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; background: #F0F0EC; font-size: 13px; text-decoration: line-through;">무조건 오른다</span><span style="height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 999px; background: #F0F0EC; font-size: 13px; text-decoration: line-through;">지금 사세요</span>
+        </div>
+        <span style="font-size: 13px; color: #55554F; line-height: 1.6;">과장 표현과 매수 권유를 막습니다. 출처 표기는 카드에 자동으로 들어갑니다.</span>
+      </section>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><label for="e4" style="font-size: 13px; color: #55554F;">해시태그</label><input id="e4" type="text" placeholder="#신사동 #실거래가" style="height: 44px; box-sizing: border-box; border: 1px solid #D6D6D2; border-radius: 12px; padding: 0 14px; background: #FFFFFF; font: inherit; font-size: 15px; color: #111111;"></div>
+      <button type="button" style="height: 52px; border: 0; border-radius: 999px; background: #111111; color: #C8F03C; font: inherit; font-size: 17px; font-weight: 700;">이미지 3장 받기</button>
+      <button type="button" style="height: 44px; border: 1px solid #111111; border-radius: 999px; background: transparent; color: #111111; font: inherit; font-size: 15px;">본문 복사</button>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

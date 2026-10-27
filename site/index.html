@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실거래 키트</title>
+<meta name="description" content="국토교통부 아파트 실거래가로 만드는 여섯 가지 앱. 키트를 받아 AI 에게 맡기면 만들어집니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css">
+<style>
+:root {
+  --bg: #F7F7F5;
+  --surface: #FFFFFF;
+  --ink: #15171A;
+  --ink-2: #464B55;
+  --muted: #5E636D;
+  --line: #E2E3E0;
+  --accent: #1D4ED8;
+  --accent-strong: #1E3A8A;
+  --accent-tint: #E8EEFC;
+  --code-bg: #15171A;
+  --code-ink: #E9EBEE;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111214;
+    --surface: #1A1C1F;
+    --ink: #ECEDEF;
+    --ink-2: #C2C6CD;
+    --muted: #9EA3AC;
+    --line: #2A2D32;
+    --accent: #7FA2FF;
+    --accent-strong: #A9C0FF;
+    --accent-tint: #1C2440;
+    --code-bg: #0B0C0E;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+a:hover { color: var(--accent-strong); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+header.top { border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+nav.top-nav { display: flex; gap: 24px; font-size: 15px; }
+nav.top-nav a { color: var(--ink-2); text-decoration: none; }
+nav.top-nav a:hover { color: var(--ink); }
+
+.hero { padding: 72px 0 72px; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: center; }
+.hero h1 { margin: 0; font-size: 56px; line-height: 1.12; letter-spacing: -0.035em; font-weight: 800; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero > div:first-child p { margin: 20px 0 0; font-size: 19px; color: var(--ink-2); max-width: 36ch; }
+.hero-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+.quick { border-left: 1px solid var(--line); padding-left: 32px; display: flex; flex-direction: column; gap: 14px; }
+.quick-title { margin: 0; font-size: 15px; font-weight: 700; color: var(--muted); }
+.quick-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.quick-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 10px 10px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.quick-no { font-weight: 800; color: var(--accent); }
+.quick-name { display: flex; flex-direction: column; min-width: 0; color: var(--ink); text-decoration: none; }
+.quick-name:hover b { text-decoration: underline; }
+.quick-name b { font-size: 16px; }
+.quick-name small { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.quick-list .btn { height: 38px; padding: 0 16px; font-size: 14px; }
+.hero .quick-note { margin: 0; font-size: 13px; color: var(--muted); }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform .2s cubic-bezier(.32,.72,0,1), background .2s; white-space: nowrap; }
+.btn:hover { color: var(--ink); border-color: var(--ink-2); }
+.btn:active { transform: scale(.98); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+.btn-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #FFFFFF; }
+@media (prefers-color-scheme: dark) { .btn-primary, .btn-primary:hover { color: #0B1023; } }
+.btn-size { font-size: 13px; font-weight: 500; opacity: .8; }
+
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+section h2 { margin: 0 0 12px; font-size: 36px; letter-spacing: -0.03em; line-height: 1.2; font-weight: 800; }
+section > .wrap > p.lead { margin: 0 0 40px; color: var(--ink-2); font-size: 17px; max-width: 60ch; }
+
+.os-tabs { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); margin-bottom: 28px; }
+.os-tabs button { height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-2); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.os-tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+.install { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.install > li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; }
+.install > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.install > li > h3 { margin: 0; font-size: 19px; display: flex; align-items: center; gap: 12px; }
+.install > li > h3::before { content: counter(step); flex: 0 0 30px; height: 30px; border-radius: 999px; background: var(--accent-tint); color: var(--accent); font-size: 15px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.install p { margin: 0; color: var(--ink-2); font-size: 15px; }
+.install .hint { font-size: 14px; color: var(--muted); }
+.install .tools { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; display: grid; gap: 4px; }
+.cmd { display: block; background: var(--code-bg); color: var(--code-ink); border-radius: 10px; padding: 12px 16px; font-family: ui-monospace, 'Cascadia Mono', Menlo, monospace; font-size: 14px; overflow-x: auto; white-space: nowrap; }
+.install[data-os="win"] .os.mac, .install[data-os="mac"] .os.win { display: none; }
+.prompt { margin-top: 14px; background: var(--code-bg); color: var(--code-ink); border-radius: var(--radius); padding: 18px 20px; font-size: 14px; line-height: 1.7; position: relative; }
+.prompt pre { margin: 0; white-space: pre-wrap; font-family: 'Pretendard', system-ui, sans-serif; }
+.prompt button { position: absolute; top: 12px; right: 12px; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #3A3D44; background: transparent; color: var(--code-ink); font: inherit; font-size: 13px; cursor: pointer; }
+
+.group-title { display: flex; align-items: baseline; gap: 14px; margin: 0 0 20px; flex-wrap: wrap; }
+.group-title h3 { margin: 0; font-size: 22px; letter-spacing: -0.02em; }
+.group-title span { color: var(--muted); font-size: 15px; }
+.kits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-bottom: 56px; }
+.kit { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
+.kit-shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--bg); }
+.kit-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform .6s cubic-bezier(.32,.72,0,1); }
+.kit-shot:hover img { transform: scale(1.02); }
+@media (prefers-reduced-motion: reduce) { .kit-shot img { transition: none; } .kit-shot:hover img { transform: none; } }
+.kit-body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.kit-no { margin: 0; font-size: 14px; font-weight: 700; color: var(--accent); }
+.kit h3 { margin: -8px 0 0; font-size: 25px; letter-spacing: -0.02em; }
+.kit-summary { margin: 0; color: var(--ink-2); font-size: 15px; }
+.kit-meta { margin: 0; display: grid; gap: 8px; font-size: 14px; }
+.kit-meta div { display: grid; grid-template-columns: 1fr; gap: 2px; }
+.kit-meta dt { color: var(--muted); }
+.kit-meta dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.need { font-size: 13px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); }
+.need-extra { background: var(--accent-tint); border-color: transparent; }
+.kit-actions { margin-top: auto; padding-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+table.ready { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.ready th, table.ready td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.ready th { color: var(--muted); font-weight: 500; font-size: 14px; }
+.table-box { overflow-x: auto; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 1080px) {
+  .kits { grid-template-columns: 1fr; max-width: 640px; }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 56px 0 48px; gap: 32px; }
+  .hero h1 { font-size: 40px; }
+  .quick { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+  .install { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  nav.top-nav { gap: 16px; font-size: 14px; }
+  .hero h1 { font-size: 34px; }
+  section h2 { font-size: 28px; }
+  .kit-meta div { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">실거래 키트</a>
+    <nav class="top-nav" aria-label="바로가기">
+      <a href="#install">설치</a>
+      <a href="#kits">시나리오</a>
+      <a href="#ready">준비물</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>같은 실거래 데이터,<br><em>여섯 가지</em> 쓰임</h1>
+      <p>키트를 받아 압축을 풀고, AI 에게 이대로 만들어 달라고 하면 됩니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#install">처음이라면 설치부터</a>
+        <a class="btn" href="#kits">시안 보며 고르기</a>
+      </div>
+    </div>
+    <div class="quick" aria-labelledby="quick-title">
+      <h2 id="quick-title" class="quick-title">바로 받기</h2>
+      <ol class="quick-list">
+        <li>
+          <span class="quick-no">1</span>
+          <a class="quick-name" href="#s1-flow"><b>동네 흐름</b><small>인증키</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s1-flow.zip" download aria-label="동네 흐름 키트 받기">받기</a>
+        </li>
+        <li>
+          <span class="quick-no">2</span>
+          <a class="quick-name" href="#s2-shelf"><b>단지 서랍</b><small>인증키</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s2-shelf.zip" download aria-label="단지 서랍 키트 받기">받기</a>
+        </li>
+        <li>
+          <span class="quick-no">3</span>
+          <a class="quick-name" href="#s3-desk"><b>브리핑 데스크</b><small>인증키 · 모델 키</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s3-desk.zip" download aria-label="브리핑 데스크 키트 받기">받기</a>
+        </li>
+        <li>
+          <span class="quick-no">4</span>
+          <a class="quick-name" href="#s4-studio"><b>카드 스튜디오</b><small>인증키 · 모델 키</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s4-studio.zip" download aria-label="카드 스튜디오 키트 받기">받기</a>
+        </li>
+        <li>
+          <span class="quick-no">5</span>
+          <a class="quick-name" href="#s5-morning"><b>아침 보고</b><small>인증키 · 모델 키 · 슬랙·GitHub</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s5-morning.zip" download aria-label="아침 보고 키트 받기">받기</a>
+        </li>
+        <li>
+          <span class="quick-no">6</span>
+          <a class="quick-name" href="#s6-alert"><b>단지 알림</b><small>인증키 · 슬랙·GitHub</small></a>
+          <a class="btn btn-primary" href="downloads/realdeal-s6-alert.zip" download aria-label="단지 알림 키트 받기">받기</a>
+        </li>
+      </ol>
+      <p class="quick-note">키트에는 실제 키가 들어 있지 않습니다. 키 없이도 서울 강남구 예시 데이터로 먼저 볼 수 있습니다.</p>
+    </div>
+  </div>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>설치하고 만들기</h2>
+      <p class="lead">처음 한 번만 준비하면 됩니다. 쓰는 컴퓨터를 고르세요.</p>
+      <div class="os-tabs" role="tablist" aria-label="운영체제">
+        <button type="button" role="tab" id="tab-win" aria-controls="panel-steps" aria-selected="true" data-os="win">Windows</button>
+        <button type="button" role="tab" id="tab-mac" aria-controls="panel-steps" aria-selected="false" data-os="mac">Mac</button>
+      </div>
+      <ol class="install" id="panel-steps" role="tabpanel" data-os="win">
+        <li>
+          <h3>Node.js 22 설치</h3>
+          <p><a href="https://nodejs.org/ko/download" target="_blank" rel="noopener">nodejs.org</a> 에서 <b>LTS</b> 버전을 받아 설치합니다.</p>
+          <p class="os win">설치 파일(.msi)을 실행하고 계속 "다음"을 누릅니다. 끝나면 <b>PowerShell</b> 을 새로 열어 확인합니다.</p>
+          <p class="os mac">설치 파일(.pkg)을 실행합니다. 끝나면 <b>터미널</b> 을 새로 열어 확인합니다.</p>
+          <code class="cmd">node -v</code>
+          <p class="hint">v22 이상이 나오면 성공입니다.</p>
+        </li>
+        <li>
+          <h3>AI 코딩 도구 준비</h3>
+          <p>아래 중 하나면 됩니다. 이미 쓰고 있는 것이 있으면 그것을 씁니다.</p>
+          <ul class="tools">
+            <li><a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">Claude Code</a> 설치 안내대로 설치</li>
+            <li><a href="https://github.com/openai/codex" target="_blank" rel="noopener">Codex</a> 설치 안내대로 설치</li>
+            <li><a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a> 같은 AI 편집기</li>
+          </ul>
+        </li>
+        <li>
+          <h3>키트 받고 압축 풀기</h3>
+          <p>위의 <b>바로 받기</b> 또는 아래 시나리오에서 zip 을 받습니다.</p>
+          <p class="os win">받은 파일을 오른쪽 클릭 → <b>압축 풀기</b>. 바탕화면처럼 찾기 쉬운 곳에 풉니다.</p>
+          <p class="os mac">받은 파일을 더블클릭하면 같은 자리에 폴더가 생깁니다.</p>
+        </li>
+        <li>
+          <h3>AI 에게 맡기기</h3>
+          <p>푼 폴더를 AI 코딩 도구에서 엽니다. 터미널에서 쓰는 도구라면 그 폴더로 이동한 뒤 실행합니다.</p>
+          <code class="cmd os win">cd $HOME\Desktop\realdeal-s1-flow</code>
+          <code class="cmd os mac">cd ~/Desktop/realdeal-s1-flow</code>
+          <p>그리고 이렇게 말합니다.</p>
+          <div class="prompt">
+            <pre id="prompt-text">이 폴더의 START_HERE.md 와 CLAUDE.md 를 읽고,
+docs/BUILD_PLAN.md 대로 끝까지 만들어줘.
+단계마다 확인하면서 진행해.</pre>
+            <button type="button" id="copy-prompt">복사</button>
+          </div>
+          <p class="hint">보통 30분~1시간 걸립니다. 끝나면 AI 가 확인한 것과 내가 할 일을 알려 줍니다.</p>
+        </li>
+        <li>
+          <h3>띄우고 쓰기</h3>
+          <code class="cmd">npm run dev</code>
+          <p>브라우저에서 <b>http://localhost:3000</b> 을 엽니다. 화면의 인증키 칸에 <a href="https://www.data.go.kr/data/15126469/openapi.do" target="_blank" rel="noopener">공공데이터포털 인증키</a>를 넣으면 전국 어디든 조회됩니다.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="kits">
+    <div class="wrap">
+      <h2>시나리오</h2>
+      <p class="lead">그림을 누르면 목표 화면 시안이 크게 열립니다. 시안의 숫자와 단지명은 예시입니다.</p>
+      <div class="group-title"><h3>조회하고 정리하는 앱</h3><span>공공데이터포털 인증키만 있으면 됩니다</span></div>
+      <div class="kits">
+      <article class="kit" id="s1-flow">
+        <a class="kit-shot" href="mockups/s1-flow.html" target="_blank" rel="noopener" aria-label="동네 흐름 시안 크게 보기">
+          <img src="previews/s1-flow.png" alt="동네 흐름 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">1</p>
+          <h3>동네 흐름</h3>
+          <p class="kit-summary">동네 하나를 고르면 최근 1년 아파트 시세가 오르는지 내리는지를 결론 한 문장과 차트 세 개로 보여주는 앱.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>관심 동네의 요즘 흐름이 궁금한 실수요자, 손님에게 동네를 설명하는 중개사무소</dd></div>
+            <div><dt>만들어지는 것</dt><dd>결론 문장, 3.3㎡당 중위 가격 차트, 월별 거래량, 면적대별 작은 차트, CSV</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s1-flow.zip" download>키트 받기 <span class="btn-size">220 KB</span></a>
+            <a class="btn" href="mockups/s1-flow.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      <article class="kit" id="s2-shelf">
+        <a class="kit-shot" href="mockups/s2-shelf.html" target="_blank" rel="noopener" aria-label="단지 서랍 시안 크게 보기">
+          <img src="previews/s2-shelf.png" alt="단지 서랍 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">2</p>
+          <h3>단지 서랍</h3>
+          <p class="kit-summary">동네 전체가 아니라 내가 별표한 단지들의 거래만 서랍처럼 모아 보는 앱. 거래 한 건 한 건을 점으로, 평형별 가격 폭을 막대로 보여 준다.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>갈아타기를 고민하는 1주택자, 담당 단지를 관리하는 중개사</dd></div>
+            <div><dt>만들어지는 것</dt><dd>즐겨찾기 단지 카드, 거래 점 그림, 평형별 가격 폭, 한 줄 해설</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s2-shelf.zip" download>키트 받기 <span class="btn-size">245 KB</span></a>
+            <a class="btn" href="mockups/s2-shelf.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      <article class="kit" id="s6-alert">
+        <a class="kit-shot" href="mockups/s6-alert.html" target="_blank" rel="noopener" aria-label="단지 알림 시안 크게 보기">
+          <img src="previews/s6-alert.png" alt="단지 알림 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">6</p>
+          <h3>단지 알림</h3>
+          <p class="kit-summary">관심 단지마다 '최고가를 넘으면', '얼마 아래로 거래되면' 같은 조건을 정해 두면, 조건에 맞는 새로 확인된 거래만 매일 아침 슬랙으로 알려 주는 앱.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>목표 단지를 기다리는 매수 대기자, 신고가와 해제를 먼저 알아야 하는 중개사</dd></div>
+            <div><dt>만들어지는 것</dt><dd>조건 문장, 휴대폰 모양 알림함, 매일 슬랙 알림</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span><span class="need need-extra">슬랙 · GitHub</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s6-alert.zip" download>키트 받기 <span class="btn-size">275 KB</span></a>
+            <a class="btn" href="mockups/s6-alert.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      </div>
+      <div class="group-title"><h3>분석 모델이 글을 쓰는 앱</h3><span>인증키에 더해 분석 모델 API 키를 연결합니다</span></div>
+      <div class="kits">
+      <article class="kit" id="s3-desk">
+        <a class="kit-shot" href="mockups/s3-desk.html" target="_blank" rel="noopener" aria-label="브리핑 데스크 시안 크게 보기">
+          <img src="previews/s3-desk.png" alt="브리핑 데스크 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">3</p>
+          <h3>브리핑 데스크</h3>
+          <p class="kit-summary">동네와 달을 고르면 한 장짜리 시장 브리핑 문서를 만드는 앱. 숫자는 앱이 계산하고 판단 문장은 분석 모델이 쓰며, 문장 속 숫자는 원자료와 자동 대조한다.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>매달 손님에게 동네 시장을 설명하는 중개사무소 대표</dd></div>
+            <div><dt>만들어지는 것</dt><dd>A4 한 장 브리핑 (인쇄·PDF), 숫자 대조 표시</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span><span class="need need-extra">분석 모델 API 키</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s3-desk.zip" download>키트 받기 <span class="btn-size">339 KB</span></a>
+            <a class="btn" href="mockups/s3-desk.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      <article class="kit" id="s4-studio">
+        <a class="kit-shot" href="mockups/s4-studio.html" target="_blank" rel="noopener" aria-label="카드 스튜디오 시안 크게 보기">
+          <img src="previews/s4-studio.png" alt="카드 스튜디오 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">4</p>
+          <h3>카드 스튜디오</h3>
+          <p class="kit-summary">동네와 달을 고르면 인스타그램·스레드에 올릴 카드 이미지 3장과 본문 후보 3가지를 만드는 앱. 과장 표현과 지어낸 숫자를 자동으로 걸러낸다.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>SNS 로 동네 소식을 올리는 중개사무소, 부동산 콘텐츠 제작자</dd></div>
+            <div><dt>만들어지는 것</dt><dd>PNG 카드 3장, 어조별 본문 3가지, 해시태그</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span><span class="need need-extra">분석 모델 API 키</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s4-studio.zip" download>키트 받기 <span class="btn-size">276 KB</span></a>
+            <a class="btn" href="mockups/s4-studio.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      <article class="kit" id="s5-morning">
+        <a class="kit-shot" href="mockups/s5-morning.html" target="_blank" rel="noopener" aria-label="아침 보고 시안 크게 보기">
+          <img src="previews/s5-morning.png" alt="아침 보고 목표 화면" width="1280" height="1000" loading="lazy">
+        </a>
+        <div class="kit-body">
+          <p class="kit-no">5</p>
+          <h3>아침 보고</h3>
+          <p class="kit-summary">지켜보는 동네들에 지난 확인 이후 새로 확인된 아파트 거래를 매일 아침 8시 슬랙으로 보내 주는 앱. 목록은 앱이, 요약 두 문장은 분석 모델이 쓴다.</p>
+          <dl class="kit-meta">
+            <div><dt>누가</dt><dd>아침 회의에서 새 거래를 공유하는 중개 팀, 동네 시장을 매일 보는 투자자</dd></div>
+            <div><dt>만들어지는 것</dt><dd>매일 슬랙 메시지, 지난 보고 기록, 계약일과 확인일 그림</dd></div>
+            <div><dt>필요한 것</dt><dd><span class="need">공공데이터포털 인증키</span><span class="need need-extra">분석 모델 API 키</span><span class="need need-extra">슬랙 · GitHub</span></dd></div>
+          </dl>
+          <div class="kit-actions">
+            <a class="btn btn-primary" href="downloads/realdeal-s5-morning.zip" download>키트 받기 <span class="btn-size">286 KB</span></a>
+            <a class="btn" href="mockups/s5-morning.html" target="_blank" rel="noopener">시안 크게 보기</a>
+          </div>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ready">
+    <div class="wrap">
+      <h2>준비물</h2>
+      <p class="lead">키는 각자 발급받아 자기 화면에 넣습니다. 키트 안 어디에도 키가 들어 있지 않습니다.</p>
+      <div class="table-box">
+        <table class="ready">
+          <thead><tr><th scope="col">무엇</th><th scope="col">필요한 시나리오</th><th scope="col">어디서</th></tr></thead>
+          <tbody>
+            <tr><td>Node.js 22 이상</td><td>전부</td><td><a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> 에서 LTS 설치</td></tr>
+            <tr><td>AI 코딩 도구</td><td>전부</td><td>Claude Code, Codex, Cursor 등</td></tr>
+            <tr><td>공공데이터포털 인증키</td><td>전부 (없으면 예시 데이터)</td><td><a href="https://www.data.go.kr/data/15126469/openapi.do" target="_blank" rel="noopener">국토교통부_아파트 매매 실거래가 자료</a> 활용신청, 발급 뒤 1~2시간 기다림</td></tr>
+            <tr><td>분석 모델 API 키</td><td>3, 4, 5</td><td>Anthropic, OpenAI, Google Gemini, OpenRouter 중 하나. OpenRouter 에는 무료 모델이 있습니다</td></tr>
+            <tr><td>슬랙 Webhook, GitHub 계정</td><td>5, 6</td><td>매일 아침 자동으로 보내기 위해 필요합니다</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">데이터 출처: 국토교통부 실거래가 공개시스템 (공공데이터포털 OpenAPI). 키트의 예시 데이터는 서울 강남구 2025년 10월 ~ 2026년 10월 실제 공개 자료입니다.</div>
+</footer>
+
+<script>
+// 운영체제 탭: 처음에는 접속한 컴퓨터에 맞춰 고른다
+(() => {
+  const panel = document.getElementById('panel-steps');
+  const tabs = [...document.querySelectorAll('.os-tabs [role="tab"]')];
+  const pick = (os) => {
+    panel.dataset.os = os;
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.os === os)));
+  };
+  tabs.forEach((t) => t.addEventListener('click', () => pick(t.dataset.os)));
+  if (/Mac/i.test(navigator.platform || navigator.userAgent)) pick('mac');
+})();
+document.getElementById('copy-prompt').addEventListener('click', async (e) => {
+  const btn = e.currentTarget;
+  try {
+    await navigator.clipboard.writeText(document.getElementById('prompt-text').textContent);
+    btn.textContent = '복사했습니다';
+  } catch {
+    btn.textContent = '직접 선택해 복사하세요';
+  }
+  setTimeout(() => { btn.textContent = '복사'; }, 2000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* 디자인 토큰은 docs/DESIGN.md 의 "토큰" 표를 그대로 옮긴다. 화면 코드에서 색을 직접 쓰지 않는다. */
+:root {
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }

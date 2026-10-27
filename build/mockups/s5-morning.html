@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아침 보고 · 목표 화면 (예시 데이터)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#F2B544}a:hover{color:#FFD58A}
+</style>
+</head>
+<body>
+<!-- 목표 화면 시안. 숫자와 단지명은 지어낸 예시이며 모양·간격·색만 따른다. -->
+<div style="font-family: 'IBM Plex Sans KR', sans-serif; background: #0E1013; color: #E8EAED; min-height: 1060px;">
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 18px 32px; border-bottom: 1px solid #23272E;">
+    <span style="font-size: 20px; font-weight: 700;">아침 보고</span>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9; border: 1px solid #2C3139; border-radius: 8px; padding: 6px 10px;">매일 08:00 KST · cron 0 23 * * *</span>
+    <span style="font-size: 13px; color: #9AA0A9;">다음 실행 10월 21일 08:00</span>
+    <button type="button" style="margin-left: auto; height: 40px; padding: 0 18px; border: 0; border-radius: 8px; background: #F2B544; color: #1A1407; font: inherit; font-size: 15px; font-weight: 700;">지금 한 번 실행</button>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 0;">
+    <nav aria-label="최근 7일" style="flex: 1 1 260px; max-width: 290px; border-right: 1px solid #23272E; padding: 20px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px;">
+      <h2 style="margin: 0 8px 10px; font-size: 13px; font-weight: 600; color: #9AA0A9;">최근 7일 보낸 기록</h2>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: #1B1F24; border: 1px solid #F2B544;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F2B544;">10.20</span>
+          <span style="font-size: 13px; font-weight: 600; color: #7FD69B;">3건 보냄</span>
+          <span style="font-size: 13px; color: #9AA0A9;">화</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">가로수힐 84㎡가 1년 최고가로 신고됐습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.19</span>
+          <span style="font-size: 13px; font-weight: 600; color: #9AA0A9;">0건</span>
+          <span style="font-size: 13px; color: #9AA0A9;">월</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">새로 신고된 거래가 없었습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.18</span>
+          <span style="font-size: 13px; font-weight: 600; color: #9AA0A9;">0건</span>
+          <span style="font-size: 13px; color: #9AA0A9;">일</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">주말이라 신고가 없었습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.17</span>
+          <span style="font-size: 13px; font-weight: 600; color: #9AA0A9;">0건</span>
+          <span style="font-size: 13px; color: #9AA0A9;">토</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">주말이라 신고가 없었습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.16</span>
+          <span style="font-size: 13px; font-weight: 600; color: #7FD69B;">2건 보냄</span>
+          <span style="font-size: 13px; color: #9AA0A9;">금</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">압구정동 84㎡ 두 건이 들어왔습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.15</span>
+          <span style="font-size: 13px; font-weight: 600; color: #FF8A7A;">재시도 후 보냄</span>
+          <span style="font-size: 13px; color: #9AA0A9;">목</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">국토부 응답이 늦어 08:10에 다시 보냈습니다</span>
+        </a>
+      
+        <a href="#" style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 4px 10px; padding: 12px; border-radius: 10px; text-decoration: none; color: #E8EAED; background: transparent; border: 1px solid transparent;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">10.14</span>
+          <span style="font-size: 13px; font-weight: 600; color: #7FD69B;">1건 보냄</span>
+          <span style="font-size: 13px; color: #9AA0A9;">수</span>
+          <span style="font-size: 13px; color: #C3C7CD; line-height: 1.5;">신사한강 59㎡ 16억 8,000</span>
+        </a>
+      
+    </nav>
+
+    <main style="flex: 999 1 520px; min-width: 0; padding: 28px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px;">
+      <section style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 style="margin: 0; font-size: 13px; font-weight: 600; color: #9AA0A9;">10월 20일 오전 8:00에 보낸 메시지 · 예시 데이터</h2>
+        <div style="border: 1px solid #2C3139; border-radius: 14px; background: #15181C; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; justify-content: space-between; font-size: 13px; color: #9AA0A9;"><span>#우리동네-거래</span><span>실거래 봇</span></div>
+          <p style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5;">새로 확인된 거래 3건. 가로수힐 84㎡가 1년 최고가로 들어왔습니다.</p>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #C3C7CD;">신사동 두 건 모두 84㎡이고, 9월 중위가보다 높게 거래됐습니다. 압구정동 한 건은 이달 계약분이라 다음 주 신고가 더 들어올 수 있습니다.</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            
+              <li style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 10px 14px; border-radius: 10px; background: #1B1F24; border-left: 3px solid #F2B544;">
+                <span style="font-size: 15px;">신사동 가로수힐 84㎡ · 14층, 1년 최고</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600;">23억 5,000</span>
+              </li>
+            
+              <li style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 10px 14px; border-radius: 10px; background: #1B1F24; border-left: 3px solid #4A515C;">
+                <span style="font-size: 15px;">신사동 잠원로뷰 84㎡ · 6층</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600;">21억 2,000</span>
+              </li>
+            
+              <li style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 10px 14px; border-radius: 10px; background: #1B1F24; border-left: 3px solid #4A515C;">
+                <span style="font-size: 15px;">압구정동 [단지명] 84㎡ · 9층</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600;">[금액]</span>
+              </li>
+            
+          </ul>
+          <span style="font-size: 13px; color: #9AA0A9;">요약 문장은 분석 모델이 썼고, 금액과 건수는 국토부 원자료 그대로입니다.</span>
+        </div>
+      </section>
+
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <figcaption style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 17px; font-weight: 700;">새로 확인된 거래의 계약은 한참 전입니다</span>
+          <span style="font-size: 13px; color: #9AA0A9;">실거래는 계약 후 30일 안에 신고합니다. 그래서 이 보고는 계약일이 아니라 새로 확인된 날을 기준으로 보냅니다.</span>
+        </figcaption>
+        <svg viewBox="0 0 600 150" style="width: 100%; height: 170px;" role="img" aria-label="세 거래의 계약일은 9월 21일, 9월 27일, 10월 2일이고 확인일은 모두 10월 20일">
+          <line x1="564" y1="18" x2="564" y2="126" stroke="#F2B544" stroke-width="1.5" stroke-dasharray="3 3"></line>
+          <text x="560" y="12" text-anchor="end" font-family="IBM Plex Sans KR" font-size="13" fill="#F2B544">이번 확인</text>
+          <line x1="116" y1="40" x2="564" y2="40" stroke="#4A515C" stroke-width="2"></line>
+          <circle cx="116" cy="40" r="6" fill="#E8EAED"></circle>
+          <circle cx="564" cy="40" r="6" fill="#F2B544"></circle>
+          <text x="128" y="32" font-family="IBM Plex Sans KR" font-size="13" fill="#C3C7CD">가로수힐 · 9.21 계약, 29일 뒤 확인</text>
+          <line x1="212" y1="78" x2="564" y2="78" stroke="#4A515C" stroke-width="2"></line>
+          <circle cx="212" cy="78" r="6" fill="#E8EAED"></circle>
+          <circle cx="564" cy="78" r="6" fill="#F2B544"></circle>
+          <text x="224" y="70" font-family="IBM Plex Sans KR" font-size="13" fill="#C3C7CD">잠원로뷰 · 9.27 계약, 23일 뒤 확인</text>
+          <line x1="292" y1="116" x2="564" y2="116" stroke="#4A515C" stroke-width="2"></line>
+          <circle cx="292" cy="116" r="6" fill="#E8EAED"></circle>
+          <circle cx="564" cy="116" r="6" fill="#F2B544"></circle>
+          <text x="304" y="108" font-family="IBM Plex Sans KR" font-size="13" fill="#C3C7CD">압구정동 · 10.2 계약, 18일 뒤 확인</text>
+          <line x1="20" y1="140" x2="580" y2="140" stroke="#2C3139"></line>
+          <text x="20" y="150" font-family="JetBrains Mono" font-size="11" fill="#9AA0A9">9.15</text>
+          <text x="276" y="150" font-family="JetBrains Mono" font-size="11" fill="#9AA0A9">10.1</text>
+          <text x="580" y="150" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#9AA0A9">10.20</text>
+        </svg>
+      </figure>
+    </main>
+
+    <aside style="flex: 1 1 300px; max-width: 340px; border-left: 1px solid #23272E; padding: 24px 22px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; background: #121418;">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 700;">연결 세 가지</h2>
+      <p style="margin: 0; font-size: 13px; color: #9AA0A9; line-height: 1.6;">내 컴퓨터가 꺼져 있어도 돌아야 해서, 키는 GitHub 저장소의 Secrets 에 둡니다. 코드 파일에는 넣지 않습니다.</p>
+
+      <section style="border: 1px solid #2C3139; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 15px; font-weight: 600;">공공데이터포털 인증키</span><span style="font-size: 13px; color: #7FD69B;">설정됨</span></div>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">MOLIT_API_KEY</code>
+        <label for="g1" style="font-size: 13px; color: #9AA0A9;">화면에서 시험할 키</label>
+        <input id="g1" type="password" placeholder="인증키 붙여 넣기" style="height: 38px; box-sizing: border-box; border: 1px solid #2C3139; border-radius: 8px; padding: 0 12px; background: #0E1013; color: #E8EAED; font: inherit; font-size: 15px;">
+      </section>
+
+      <section style="border: 1px solid #5A4720; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; background: #19160F;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 15px; font-weight: 600;">요약 쓰는 분석 모델</span><span style="font-size: 13px; color: #7FD69B;">연결됨</span></div>
+        <label for="g2" style="font-size: 13px; color: #9AA0A9;">제공사와 모델</label>
+        <div style="display: flex; gap: 6px;">
+          <select id="g2" style="flex: 1; height: 38px; border: 1px solid #2C3139; border-radius: 8px; padding: 0 10px; background: #0E1013; color: #E8EAED; font: inherit; font-size: 15px;"><option>Google Gemini</option></select>
+          <select aria-label="모델" style="flex: 1; height: 38px; border: 1px solid #2C3139; border-radius: 8px; padding: 0 10px; background: #0E1013; color: #E8EAED; font: inherit; font-size: 15px;"><option>목록에서 선택</option></select>
+        </div>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">LLM_PROVIDER · LLM_API_KEY</code>
+        <span style="font-size: 13px; color: #9AA0A9;">새 거래가 0건인 날은 모델을 부르지 않습니다</span>
+      </section>
+
+      <section style="border: 1px solid #2C3139; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 15px; font-weight: 600;">슬랙 Webhook</span><span style="font-size: 13px; color: #7FD69B;">설정됨</span></div>
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9AA0A9;">SLACK_WEBHOOK_URL</code>
+        <a href="#" style="font-size: 13px;">시험 메시지 보내기</a>
+      </section>
+
+      <section style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-size: 13px; color: #9AA0A9;">지켜보는 동</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid #F2B544; color: #E8EAED;">강남구 신사동</span>
+          <span style="font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid #F2B544; color: #E8EAED;">강남구 압구정동</span>
+          <button type="button" style="font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px dashed #4A515C; background: transparent; color: #C3C7CD;">+ 추가</button>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

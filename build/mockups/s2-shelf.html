@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>단지 서랍 · 목표 화면 (예시 데이터)</title>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2346D5}a:hover{color:#16308F}
+</style>
+</head>
+<body>
+<!-- 목표 화면 시안. 숫자와 단지명은 지어낸 예시이며 모양·간격·색만 따른다. -->
+<div style="font-family: 'Gothic A1', sans-serif; background: #E9EBEE; color: #12151C; min-height: 1000px; padding: 24px 48px 48px; box-sizing: border-box;">
+  <nav aria-label="상단" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; width: max-content; max-width: 100%; margin: 0 auto 40px; padding: 8px 8px 8px 22px; background: rgba(255,255,255,0.72); border: 1px solid rgba(18,21,28,0.07); border-radius: 999px; box-shadow: 0 10px 30px rgba(40,48,66,0.08);">
+    <span style="font-size: 17px; font-weight: 800; letter-spacing: -0.02em;">단지 서랍</span>
+    <label for="b1" style="position: absolute; left: -9999px;">단지 또는 동 검색</label>
+    <input id="b1" type="search" placeholder="단지나 동 이름" style="width: 220px; height: 40px; box-sizing: border-box; padding: 0 16px; border: 0; border-radius: 999px; background: #F1F2F4; font: inherit; font-size: 15px; color: #12151C;">
+    <div style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 6px 0 16px; border-radius: 999px; background: #F1F2F4;">
+      <label for="b2" style="font-size: 13px; color: #5D6472; white-space: nowrap;">공공데이터포털 인증키</label>
+      <input id="b2" type="password" placeholder="붙여 넣기" style="width: 130px; height: 30px; box-sizing: border-box; padding: 0 10px; border: 0; border-radius: 999px; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #12151C;">
+      <span style="font-size: 13px; font-weight: 700; color: #1F6B3A; padding-right: 8px;">연결됨</span>
+    </div>
+  </nav>
+
+  <header style="max-width: 1180px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 8px;">
+    <h1 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.15;">즐겨찾기한 단지 3곳</h1>
+    <p style="margin: 0; font-size: 17px; color: #4A505C;">동 전체가 아니라, 내가 고른 단지의 거래만 따로 모아 봅니다.</p>
+  </header>
+
+  <main style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px;">
+    <article style="grid-column: span 7; grid-row: span 2; padding: 6px; border-radius: 30px; background: rgba(18,21,28,0.04); border: 1px solid rgba(18,21,28,0.06);">
+      <div style="height: 100%; box-sizing: border-box; border-radius: 24px; background: #FFFFFF; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 16px 40px rgba(40,48,66,0.07); padding: 28px 30px; display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <h2 style="margin: 0; font-size: 25px; font-weight: 800; letter-spacing: -0.02em;">가로수힐</h2>
+            <span style="font-size: 15px; color: #5D6472;">신사동 · 2004년 준공, 최근 12개월 11건</span>
+          </div>
+          <button type="button" aria-label="즐겨찾기 해제: 가로수힐" aria-pressed="true" style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #E8ECFB; color: #2346D5; font-size: 20px;">★</button>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 40px; font-weight: 500; letter-spacing: -0.02em;">23억 5,000</span>
+          <span style="font-size: 15px; color: #12151C;">84㎡, 14층, 9월 21일</span>
+          <span style="font-size: 13px; font-weight: 700; color: #2346D5; background: #E8ECFB; border-radius: 999px; padding: 4px 10px;">1년 최고가</span>
+        </div>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 6px;">
+          <figcaption style="font-size: 13px; color: #5D6472;">거래 한 건이 점 하나 · 파란 점이 84㎡</figcaption>
+          <svg viewBox="0 0 620 200" style="width: 100%; height: 210px;" role="img" aria-label="가로수힐 12개월 거래 11건 분포. 84제곱미터가 20억 4천에서 23억 5천으로 상승.">
+            <line x1="40" y1="130" x2="620" y2="130" stroke="#ECEEF1"></line>
+            <line x1="40" y1="80" x2="620" y2="80" stroke="#ECEEF1"></line>
+            <line x1="40" y1="30" x2="620" y2="30" stroke="#ECEEF1"></line>
+            <text x="0" y="134" font-family="IBM Plex Mono" font-size="13" fill="#5D6472">20억</text>
+            <text x="0" y="84" font-family="IBM Plex Mono" font-size="13" fill="#5D6472">25억</text>
+            <text x="0" y="34" font-family="IBM Plex Mono" font-size="13" fill="#5D6472">30억</text>
+            <polyline points="70,126 220,121 320,117 370,112 570,104 620,95" fill="none" stroke="#2346D5" stroke-width="1.5" stroke-opacity="0.35"></polyline>
+            <circle cx="70" cy="126" r="6" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="120" cy="165" r="6" fill="#A3A9B4" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="220" cy="121" r="6" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="320" cy="117" r="6" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="320" cy="32" r="6" fill="#A3A9B4" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="370" cy="112" r="6" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="420" cy="160" r="6" fill="#A3A9B4" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="520" cy="158" r="6" fill="#A3A9B4" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="570" cy="104" r="6" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <circle cx="612" cy="109" r="5" fill="#FFFFFF" stroke="#5D6472" stroke-width="2" stroke-dasharray="2 2"></circle>
+            <circle cx="612" cy="95" r="7" fill="#2346D5" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="330" y="22" font-family="Gothic A1" font-size="13" fill="#4A505C">114㎡ 29억 8,000</text>
+            <text x="596" y="124" text-anchor="end" font-family="Gothic A1" font-size="13" fill="#5D6472">해제</text>
+            <line x1="40" y1="190" x2="620" y2="190" stroke="#12151C"></line>
+          </svg>
+          <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472; padding-left: 40px;"><span>2025.10</span><span>2026.04</span><span>2026.09</span></div>
+        </figure>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <h3 style="margin: 0; font-size: 15px; font-weight: 700;">평형별 1년 가격 폭</h3>
+          
+            <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) 120px; align-items: center; gap: 14px;">
+              <span style="font-size: 15px; font-weight: 700;">59㎡</span>
+              <div style="position: relative; height: 16px;">
+                <div style="position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #D5D9DF;"></div>
+                <div style="position: absolute; left: 8.8%; width: 4.1%; top: 4px; height: 8px; border-radius: 999px; background: #C9D3F6;"></div>
+                <div style="position: absolute; left: 12.9%; top: 1px; width: 14px; height: 14px; margin-left: -7px; border-radius: 999px; background: #2346D5; border: 2px solid #FFFFFF; box-sizing: border-box;"></div>
+              </div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-align: right; color: #12151C;">16.5~17.2억</span>
+            </div>
+          
+            <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) 120px; align-items: center; gap: 14px;">
+              <span style="font-size: 15px; font-weight: 700;">84㎡</span>
+              <div style="position: relative; height: 16px;">
+                <div style="position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #D5D9DF;"></div>
+                <div style="position: absolute; left: 31.8%; width: 18.2%; top: 4px; height: 8px; border-radius: 999px; background: #C9D3F6;"></div>
+                <div style="position: absolute; left: 50%; top: 1px; width: 14px; height: 14px; margin-left: -7px; border-radius: 999px; background: #2346D5; border: 2px solid #FFFFFF; box-sizing: border-box;"></div>
+              </div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-align: right; color: #12151C;">20.4~23.5억</span>
+            </div>
+          
+            <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) 120px; align-items: center; gap: 14px;">
+              <span style="font-size: 15px; font-weight: 700;">114㎡</span>
+              <div style="position: relative; height: 16px;">
+                <div style="position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #D5D9DF;"></div>
+                <div style="position: absolute; left: 86.8%; width: 0.6%; top: 4px; height: 8px; border-radius: 999px; background: #C9D3F6;"></div>
+                <div style="position: absolute; left: 87.1%; top: 1px; width: 14px; height: 14px; margin-left: -7px; border-radius: 999px; background: #2346D5; border: 2px solid #FFFFFF; box-sizing: border-box;"></div>
+              </div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-align: right; color: #12151C;">29.8억 1건</span>
+            </div>
+          
+        </div>
+      </div>
+    </article>
+
+    
+      <article style="grid-column: span 5; padding: 6px; border-radius: 30px; background: rgba(18,21,28,0.04); border: 1px solid rgba(18,21,28,0.06);">
+        <div style="height: 100%; box-sizing: border-box; border-radius: 24px; background: #2346D5; color: #FFFFFF; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 800;">도산파크</h2>
+            <button type="button" aria-label="즐겨찾기 해제: 도산파크" aria-pressed="true" style="width: 40px; height: 40px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.16); color: #FFFFFF; font-size: 17px;">★</button>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; font-weight: 500; letter-spacing: -0.02em;">31억 2,000</span>
+          <svg viewBox="0 0 300 50" style="width: 100%; height: 50px;" aria-hidden="true"><polyline points="4,42 50,40 100,34 150,30 200,26 250,18 296,6" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></polyline></svg>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #E3E8FB;">114㎡, 9월 11일. 이 단지 1년 거래 중 가장 높습니다.</p>
+        </div>
+      </article>
+    
+      <article style="grid-column: span 5; padding: 6px; border-radius: 30px; background: rgba(18,21,28,0.04); border: 1px solid rgba(18,21,28,0.06);">
+        <div style="height: 100%; box-sizing: border-box; border-radius: 24px; background: #FFFFFF; color: #12151C; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 800;">신사한강</h2>
+            <button type="button" aria-label="즐겨찾기 해제: 신사한강" aria-pressed="true" style="width: 40px; height: 40px; border-radius: 999px; border: 0; background: #E8ECFB; color: #2346D5; font-size: 17px;">★</button>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; font-weight: 500; letter-spacing: -0.02em;">16억 8,000</span>
+          <svg viewBox="0 0 300 50" style="width: 100%; height: 50px;" aria-hidden="true"><polyline points="4,24 50,28 100,22 150,26 200,23 250,25 296,22" fill="none" stroke="#12151C" stroke-width="2" stroke-linejoin="round"></polyline></svg>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4A505C;">59㎡는 1년째 16억대. 움직임이 거의 없습니다.</p>
+        </div>
+      </article>
+    
+
+    <section style="grid-column: span 12; padding: 6px; border-radius: 30px; background: rgba(18,21,28,0.04); border: 1px solid rgba(18,21,28,0.06);">
+      <div style="border-radius: 24px; background: #F6F7F8; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+          <h2 style="margin: 0; font-size: 17px; font-weight: 800;">신사동의 다른 단지</h2>
+          <span style="font-size: 13px; color: #5D6472;">별을 누르면 위 서랍에 들어갑니다 · 예시 데이터</span>
+        </div>
+        <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px;">
+          
+            <button type="button" aria-label="즐겨찾기: 잠원로뷰" style="flex: 0 0 auto; height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid #D5D9DF; background: #FFFFFF; font: inherit; font-size: 15px; color: #12151C;"><span style="color: #5D6472; font-size: 17px;">☆</span>잠원로뷰<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472;">5건</span></button>
+          
+            <button type="button" aria-label="즐겨찾기: 신사동산" style="flex: 0 0 auto; height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid #D5D9DF; background: #FFFFFF; font: inherit; font-size: 15px; color: #12151C;"><span style="color: #5D6472; font-size: 17px;">☆</span>신사동산<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472;">3건</span></button>
+          
+            <button type="button" aria-label="즐겨찾기: 압구정로하우스" style="flex: 0 0 auto; height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid #D5D9DF; background: #FFFFFF; font: inherit; font-size: 15px; color: #12151C;"><span style="color: #5D6472; font-size: 17px;">☆</span>압구정로하우스<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472;">2건</span></button>
+          
+            <button type="button" aria-label="즐겨찾기: 가로수파크" style="flex: 0 0 auto; height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid #D5D9DF; background: #FFFFFF; font: inherit; font-size: 15px; color: #12151C;"><span style="color: #5D6472; font-size: 17px;">☆</span>가로수파크<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472;">2건</span></button>
+          
+            <button type="button" aria-label="즐겨찾기: 신사리버" style="flex: 0 0 auto; height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 999px; border: 1px solid #D5D9DF; background: #FFFFFF; font: inherit; font-size: 15px; color: #12151C;"><span style="color: #5D6472; font-size: 17px;">☆</span>신사리버<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5D6472;">1건</span></button>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

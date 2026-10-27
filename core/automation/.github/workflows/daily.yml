@@ -1,0 +1,61 @@
+# 매일 아침 8시(한국 시간)에 scripts/daily.ts 를 돌리고, 바뀐 스냅샷(state/)을 저장소에 다시 올린다.
+# 필요한 Secrets 는 docs/AUTOMATION.md 의 표를 볼 것. 이 파일은 고치지 않아도 된다.
+name: daily
+
+on:
+  schedule:
+    - cron: '0 23 * * *' # UTC 23:00 = 한국 08:00
+  workflow_dispatch: {} # Actions 탭에서 "Run workflow" 로 지금 바로 돌릴 수 있다
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 설치
+        run: npm install --no-audit --no-fund
+
+      - name: 실행
+        run: npm run daily
+        env:
+          MOLIT_API_KEY: ${{ secrets.MOLIT_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          LLM_PROVIDER: ${{ secrets.LLM_PROVIDER }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+
+      # 실행 단계가 실패해도(예: 국토부 응답 없음) 실패 기록(state/*-history.json)은 저장한다.
+      # 스냅샷은 스크립트가 성공했을 때만 바뀌므로, 실패한 날의 거래는 다음 실행에서 다시 잡힌다.
+      - name: 스냅샷·기록 저장
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p state
+          git add state/
+          if git diff --cached --quiet; then
+            echo "바뀐 스냅샷 없음"
+          else
+            git commit -m "chore: 스냅샷 갱신 [skip ci]"
+            # 실행 중에 사용자가 config 를 커밋했으면 push 가 거절된다.
+            # state/ 는 봇만 쓰므로 원격 위에 다시 얹고 세 번까지 재시도한다.
+            for i in 1 2 3; do
+              if git push; then exit 0; fi
+              git pull --rebase origin "${GITHUB_REF_NAME}" || { git rebase --abort; exit 1; }
+              sleep 5
+            done
+            exit 1
+          fi

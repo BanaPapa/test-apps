@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>단지 알림 · 목표 화면 (예시 데이터)</title>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Gothic:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#BE185D}a:hover{color:#8A1043}
+</style>
+</head>
+<body>
+<!-- 목표 화면 시안. 숫자와 단지명은 지어낸 예시이며 모양·간격·색만 따른다. -->
+<div style="font-family: 'Nanum Gothic', sans-serif; background: #E8ECF1; color: #141A22; min-height: 1000px; padding: 40px 56px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 56px; justify-content: center; align-items: flex-start;">
+
+  <section aria-label="휴대폰 화면" style="flex: 0 0 390px; background: #FFFFFF; border-radius: 40px; box-shadow: 0 30px 60px rgba(30,40,60,0.14), 0 0 0 10px #141A22; overflow: hidden; display: flex; flex-direction: column;">
+    <header style="padding: 28px 24px 16px; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 13px; color: #586273;">10월 20일 화요일</span>
+        <h1 style="margin: 0; font-family: 'Do Hyeon', sans-serif; font-size: 32px; font-weight: 400;">새 소식 2건</h1>
+      </div>
+      <span style="font-size: 13px; color: #586273;">관심 단지 3</span>
+    </header>
+
+    <article style="margin: 0 16px; border-radius: 24px; background: #141A22; color: #FFFFFF; padding: 22px 22px 18px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 13px; font-weight: 800; color: #141A22; background: #FF8FB8; border-radius: 999px; padding: 4px 10px;">최고가 경신</span>
+        <span style="font-size: 13px; color: #B6BECB;">오전 8:00</span>
+      </div>
+      <span style="font-size: 15px; font-weight: 700;">가로수힐 84㎡</span>
+      <span style="font-family: 'Do Hyeon', sans-serif; font-size: 48px; line-height: 1;">23억 5,000</span>
+      <svg viewBox="0 0 340 70" style="width: 100%; height: 70px;" role="img" aria-label="이전 최고가 22억 6천에서 23억 5천으로 9천만원 상승">
+        <line x1="0" y1="50" x2="200" y2="50" stroke="#5B6575" stroke-width="2" stroke-dasharray="4 4"></line>
+        <text x="0" y="66" font-family="Nanum Gothic" font-size="13" fill="#B6BECB">이전 최고 22억 6,000</text>
+        <polyline points="200,50 230,50 230,12 340,12" fill="none" stroke="#FF8FB8" stroke-width="3"></polyline>
+        <text x="240" y="34" font-family="Nanum Gothic" font-size="15" font-weight="800" fill="#FF8FB8">+9,000만</text>
+      </svg>
+      <span style="font-size: 13px; color: #B6BECB; line-height: 1.6;">14층 · 9월 21일 계약, 새로 확인됐습니다</span>
+    </article>
+
+    <article style="margin: 12px 16px 0; border-radius: 24px; background: #F2F4F7; padding: 18px 22px; display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; justify-content: space-between;"><span style="font-size: 13px; font-weight: 800; color: #586273;">거래 해제</span><span style="font-size: 13px; color: #586273;">오전 8:00</span></div>
+      <span style="font-size: 15px; font-weight: 700;">가로수힐 84㎡ 22억 1,000</span>
+      <span style="font-size: 13px; color: #586273;">9월 5일 계약분이 취소됐어요. 시세 판단에서 빼세요.</span>
+    </article>
+
+    <h2 style="margin: 24px 24px 8px; font-size: 13px; font-weight: 800; color: #586273;">지난 알림</h2>
+    <ol style="list-style: none; margin: 0; padding: 0 24px 28px; display: flex; flex-direction: column; gap: 14px;">
+      
+        <li style="display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; align-items: baseline;">
+          <span style="font-size: 13px; color: #586273;">10.14</span>
+          <span style="font-size: 15px;">신사한강 59㎡ 새 거래</span>
+          <span style="font-family: 'Do Hyeon', sans-serif; font-size: 17px;">16억 8,000</span>
+        </li>
+      
+        <li style="display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; align-items: baseline;">
+          <span style="font-size: 13px; color: #586273;">09.17</span>
+          <span style="font-size: 15px;">도산파크 114㎡ 최고가</span>
+          <span style="font-family: 'Do Hyeon', sans-serif; font-size: 17px;">31억 2,000</span>
+        </li>
+      
+        <li style="display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; align-items: baseline;">
+          <span style="font-size: 13px; color: #586273;">09.10</span>
+          <span style="font-size: 15px;">가로수힐 84㎡ 새 거래</span>
+          <span style="font-family: 'Do Hyeon', sans-serif; font-size: 17px;">22억 6,000</span>
+        </li>
+      
+    </ol>
+  </section>
+
+  <section style="flex: 1 1 520px; max-width: 640px; display: flex; flex-direction: column; gap: 28px; padding-top: 8px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <h2 style="margin: 0; font-family: 'Do Hyeon', sans-serif; font-size: 40px; font-weight: 400; line-height: 1.15;">이럴 때만 알려주세요</h2>
+      <p style="margin: 0; font-size: 17px; color: #3E4757; line-height: 1.6;">매일 아침 8시, 지난 확인 이후 새로 확인된 거래를 내 조건과 비교합니다. 조건에 안 맞으면 조용히 넘어갑니다.</p>
+    </div>
+
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+      
+        <li style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 17px; line-height: 1.9; opacity: 1;">
+          <strong>가로수힐</strong><span>84㎡가</span>
+          <button type="button" style="height: 36px; padding: 0 14px; border-radius: 999px; border: 2px solid #BE185D; background: #FCE7F0; color: #141A22; font: inherit; font-size: 15px; font-weight: 700;">최고가를 넘으면</button>
+          <span>알려주세요</span>
+          <label style="margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: #586273;"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #BE185D;">켜기</label>
+        </li>
+      
+        <li style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 17px; line-height: 1.9; opacity: 1;">
+          <strong>신사한강</strong><span>59㎡가</span>
+          <button type="button" style="height: 36px; padding: 0 14px; border-radius: 999px; border: 2px solid #BE185D; background: #FCE7F0; color: #141A22; font: inherit; font-size: 15px; font-weight: 700;">새 거래가 생기면</button>
+          <span>알려주세요</span>
+          <label style="margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: #586273;"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #BE185D;">켜기</label>
+        </li>
+      
+        <li style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 17px; line-height: 1.9; opacity: 0.6;">
+          <strong>도산파크</strong><span>114㎡가</span>
+          <button type="button" style="height: 36px; padding: 0 14px; border-radius: 999px; border: 2px solid #BE185D; background: #FCE7F0; color: #141A22; font: inherit; font-size: 15px; font-weight: 700;">30억 아래로 거래되면</button>
+          <span>알려주세요</span>
+          <label style="margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: #586273;"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #BE185D;">켜기</label>
+        </li>
+      
+      <li><button type="button" style="height: 48px; padding: 0 22px; border-radius: 999px; border: 2px dashed #9AA4B3; background: transparent; color: #141A22; font: inherit; font-size: 15px; font-weight: 700;">+ 단지 조건 추가</button></li>
+    </ul>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+      <div style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
+        <label for="f1" style="font-size: 15px; font-weight: 800;">공공데이터포털 인증키</label>
+        <input id="f1" type="password" placeholder="인증키 붙여 넣기" style="height: 44px; box-sizing: border-box; padding: 0 14px; border: 1px solid #C5CCD6; border-radius: 12px; font: inherit; font-size: 15px; color: #141A22;">
+        <span style="font-size: 13px; color: #586273;">자동 확인용으로 GitHub Secrets 에도 넣습니다</span>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
+        <label for="f2" style="font-size: 15px; font-weight: 800;">받을 곳</label>
+        <input id="f2" type="text" placeholder="슬랙 Webhook 주소" style="height: 44px; box-sizing: border-box; padding: 0 14px; border: 1px solid #C5CCD6; border-radius: 12px; font: inherit; font-size: 15px; color: #141A22;">
+        <a href="#" style="font-size: 13px; font-weight: 700;">시험 알림 보내기</a>
+      </div>
+    </div>
+    <p style="margin: 0; font-size: 13px; color: #586273;">숫자 비교만으로 판단하므로 분석 모델 연결은 필요 없습니다 · 예시 데이터</p>
+  </section>
+</div>
+</body>
+</html>
