@@ -16,7 +16,8 @@
 ## 배포 (Vercel)
 
 1. Vercel → Add New → Project → 이 저장소 Import
-2. 설정은 건드리지 않고 Deploy. 루트의 `vercel.json` 이 `site/` 를 그대로 내보냅니다(빌드·환경변수 없음).
+2. **Root Directory 는 비워 둔다(저장소 루트), Framework Preset 은 Other.** Vercel 이 `core/base` 를 Next.js 앱으로 자동 인식해 Root Directory 를 `core/base` 로 잡으면 사이트가 404 가 된다. 그 폴더는 키트에 들어가는 뼈대일 뿐 사이트가 아니다.
+3. Deploy. 루트의 `vercel.json` 이 `site/` 를 그대로 내보낸다(환경변수 없음).
 
 ## 폴더
 
